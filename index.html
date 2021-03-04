@@ -2,9 +2,45 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Test PAge</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Page</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: "Roboto", sans-serif;
+            font-size: x-large;
+            margin: 0;
+        }
+
+        #navbar {
+            background-color: black;
+            color:white;
+            padding: 30px;
+        }
+        .navItem {
+            display: inline-block;
+            /*min-width: 7.5vw; */
+            /* max-width: 25vw; */
+            padding: 0 30px;
+            text-align: center;
+        }
+        .navName {
+            font-family: "Raleway", sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+        }
+    </style>
 </head>
 <body>
-<p>This is a test.</p>
+<nav id="navbar">
+    <span class="navName navItem">Gustav Lundgren</span> |
+    <span class="navItem"> Quick Link 1</span> |
+    <span class="navItem"> Quick Link 2</span> |
+    <span class="navItem"> Quick Link 3</span> |
+</nav>
+<p>This is a test paragraph.</p>
 </body>
 </html>
