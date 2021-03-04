@@ -9,17 +9,33 @@
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto&display=swap" rel="stylesheet">
 
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             font-family: "Roboto", sans-serif;
             font-size: x-large;
             margin: 0;
         }
 
-        #navbar {
+        .navbar {
             background-color: black;
-            color:white;
+            color: white;
             padding: 30px;
         }
+
+        #navbarVert {
+            display: none;
+        }
+
+        #navbarVert a {
+            width: 100%;
+            padding: 10px 0;
+            text-align: left;
+            margin-left: 30px;
+        }
+
         .navItem {
             display: inline-block;
             /*min-width: 7.5vw; */
@@ -27,19 +43,47 @@
             padding: 0 30px;
             text-align: center;
         }
+
         .navName {
             font-family: "Raleway", sans-serif;
             text-transform: uppercase;
             letter-spacing: 5px;
         }
+
+        @media only screen and (max-width: 1070px) and (min-width: 750px) {
+            /* For mobile phones: */
+            .navItem {
+                font-size: large;
+                padding: 0 10px;
+            }
+        }
+
+        @media only screen and (max-width: 750px) {
+            /* For mobile phones: */
+            #navbarHor {
+                display: none;
+            }
+
+            #navbarVert {
+                display: flex;
+            }
+        }
     </style>
 </head>
 <body>
-<nav id="navbar">
-    <span class="navName navItem">Gustav Lundgren</span> |
-    <span class="navItem"> Quick Link 1</span> |
-    <span class="navItem"> Quick Link 2</span> |
-    <span class="navItem"> Quick Link 3</span> |
+<nav id="navbarHor" class="navbar">
+    <a class="navName navItem">Gustav&nbspLundgren</a>&nbsp|
+    <a class="navItem"> Quick Link 1</a>&nbsp|&nbsp
+    <a class="navItem"> Quick Link 2</a>&nbsp|&nbsp
+    <a class="navItem"> Quick Link 3</a>
+</nav>
+<nav id="navbarVert" class="navbar">
+    <ul style="list-style-type: none">
+        <li> <a class="navName navItem" style="margin-left: 0">Gustav <BR> Lundgren</a> </li>
+        <li> <a class="navItem">Quick Link 1</a> </li>
+        <li> <a class="navItem">Quick Link 2</a> </li>
+        <li> <a class="navItem">Quick Link 3</a> </li>
+    </ul>
 </nav>
 <p>This is a test paragraph.</p>
 </body>
