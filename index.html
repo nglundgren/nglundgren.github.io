@@ -11,6 +11,7 @@
     <style>
         * {
             box-sizing: border-box;
+            font-size: x-large;
         }
 
         body {
@@ -19,6 +20,13 @@
             margin: 0;
         }
 
+        #page-container {
+            position: relative;
+            min-height: 100vh;
+        }
+        /* ====
+        NAVBAR GENERIC
+        ==== */
         .navBar {
             color: white;
             background-color: black;
@@ -71,12 +79,22 @@
         }
 
         /* ====
+        BODY TEXT
+        ==== */
+        #intro {
+            padding-bottom: 5rem;
+        }
+
+        /* ====
         CONTACT
         ==== */
         #contactInfo {
             background-color: black;
             color: white;
-            min-height: 10vh;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 5rem;
         }
 
         #contactInfo ul {
@@ -88,7 +106,7 @@
         ==== */
         @media only screen and (max-width: 1070px) and (min-width: 750px) {
             /* For mobile phones: */
-            #navbarHor a.navItem, #contactInfo a {
+            #navbarHor a.navItem {
                 padding: 0 10px;
             }
 
@@ -129,7 +147,9 @@
             <li><a class="navItem">Quick Link 3</a></li>
     </ul>
 </nav>
-<p>This is a test paragraph.</p>
+    <div id="intro">
+        <p>This is a test paragraph.</p>
+    </div>
 <footer id="contactInfo">
     <ul style="list-style-type: none">
         <li><a>email@email.etc</a></li>
