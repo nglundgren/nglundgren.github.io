@@ -19,132 +19,124 @@
             margin: 0;
         }
 
-        .navbar {
-            background-color: black;
+        .navBar {
             color: white;
-            padding: 30px;
-        }
-
-        #navbarVert {
-            display: none;
-            position: fixed;
-            left: 0;
-            right: 0;
-            top: 0;
-            padding: 0;
-        }
-
-        #navbarVert a {
-            width: 100%;
-            padding: 10px 30px;
+            background-color: black;
         }
 
         .navItem {
-            display: inline-block;
-            padding: 0 30px;
-            text-align: center;
+            color: white;
         }
 
         .navName {
-            display: inline-block;
             font-family: "Raleway", sans-serif;
             text-transform: uppercase;
             letter-spacing: 5px;
         }
 
-        #navbarVert a.navName {
-            width: 100%;
-            padding: 10px 0;
-            text-align: left;
-            margin-left: 50px;
+        /* ====
+        HORIZONTAL NAVBAR
+        ==== */
+        #navbarHor {
+            padding: 30px;
+        }
+
+        #navbarHor a.navItem {
+            padding: 30px;
+        }
+
+        /* ====
+        VERTICAL NAVBAR
+        ==== */
+        #navbarVer {
+            display: none;
+            padding: 30px;
+        }
+
+        .hamburgerButton {
+            color: white;
+            font-size: xxx-large;
+            text-decoration: none;
+            position: absolute;
+            right: 30px;
+            top: 25px;
         }
 
         #hamburgerMenu {
             display: none;
         }
 
-        .hamburgerButton {
-            color: white;
-            text-decoration: none;
-            font-size: xxx-large;
-            display: none;
-            position: fixed;
-            left: 50px;
-            top: 25px;
-            padding: 0 10px;
-        }
-        .hamburgerButton:active {
-            color: black;
-            background-color: white;
+        #hamburgerMenu li {
+            padding: 10px;
         }
 
+        /* ====
+        CONTACT
+        ==== */
         #contactInfo {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
             background-color: black;
             color: white;
-            padding: 30px 0;
+            min-height: 10vh;
         }
 
-        #contactInfo a {
+        #contactInfo ul {
             margin-left: 55%;
         }
 
+        /* ====
+        RESPONSIVE ADJUSTMENT
+        ==== */
         @media only screen and (max-width: 1070px) and (min-width: 750px) {
             /* For mobile phones: */
-            .navItem, #contactInfo a {
-                font-size: large;
+            #navbarHor a.navItem, #contactInfo a {
                 padding: 0 10px;
+            }
+
+            .navItem {
+                font-size: large;
             }
         }
 
         @media only screen and (max-width: 750px) {
-            /* For mobile phones: */
             #navbarHor {
                 display: none;
             }
 
-            #navbarVert {
-                display: inline;
-            }
-            .hamburgerButton {
+            #navbarVer {
                 display: block;
             }
 
-            #contactInfo a {
+            #contactInfo ul {
                 margin-left: 10%;
             }
         }
     </style>
 </head>
 <body>
-<nav id="navbarHor" class="navbar">
+<div id="page-container">
+<nav id="navbarHor" class="navBar">
     <a class="navName navItem">Gustav&nbspLundgren</a>&nbsp|
     <a class="navItem"> Quick Link 1</a>&nbsp|&nbsp
     <a class="navItem"> Quick Link 2</a>&nbsp|&nbsp
     <a class="navItem"> Quick Link 3</a>
 </nav>
-
-<nav id="navbarVert" class="navbar">
-    <ul style="list-style-type: none; margin-left: 50px">
-        <li><a class="navName navItem">Gustav <br> Lundgren</a></li>
-        <li><ul id="hamburgerMenu" style="list-style-type: none; margin-left:-300px">
+<nav id="navbarVer" class="navBar">
+    <a class="navName navItem">Gustav<br>Lundgren</a>
+    <a href="javascript:void(0);" class="hamburgerButton" onclick="hamburgerFunction()">&#9776</a>
+    <ul id="hamburgerMenu" style="list-style-type: square">
             <li><a class="navItem">Quick Link 1</a></li>
             <li><a class="navItem">Quick Link 2</a></li>
             <li><a class="navItem">Quick Link 3</a></li>
-        </ul></li>
     </ul>
 </nav>
-<a href="javascript:void(0);" class="hamburgerButton" onclick="hamburgerFunction()">&#9776</a>
 <p>This is a test paragraph.</p>
 <footer id="contactInfo">
     <ul style="list-style-type: none">
-        <li><p><a>email@email.etc</a></p></li>
-        <li><p><a>linkedin.com/in/etc</a></p></li>
+        <li><a>email@email.etc</a></li>
+        <li><a>linkedin.com/in/etc</a></li>
     </ul>
 </footer>
+</div>
 </body>
 <script>
     function hamburgerFunction() {
