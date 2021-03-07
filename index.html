@@ -14,6 +14,10 @@
             font-size: x-large;
         }
 
+        :root {
+            --carbon-fiber: #2e2e2e;
+        }
+
         body {
             font-family: 'Raleway', serif;
             font-size: x-large;
@@ -61,10 +65,13 @@
         ==== */
         #navbarVer {
             display: none;
-            padding: 30px;
             position: fixed;
             top: 0;
             width: 100%;
+        }
+
+        #navbarVerHead {
+            padding: 30px;
         }
 
         .hamburgerButton {
@@ -79,17 +86,20 @@
 
         .hamburgerActive {
             /* Style added via script while menu is open. */
+            background-color: dimgray;
+            /* color: black; */
+        }
+
+        .hamburgerButton:hover {
             background-color: white;
             color: black;
         }
 
-        .hamburgerButton:hover {
-            background-color: dimgray;
-        }
-
         #hamburgerMenu {
             display: none;
-            background-color: dimgray;
+            background-color: var(--carbon-fiber);
+            margin: 0;
+            padding: 10px 80px 30px;
         }
 
         #hamburgerMenu li {
@@ -101,6 +111,7 @@
         ==== */
         #content {
             padding-bottom: 5rem;
+            text-align: justify;
         }
 
         #content-body-text {
@@ -176,9 +187,11 @@
         <a href="javascript:void(0);" class="navItem"> Quick Link 3</a>
     </nav>
     <nav id="navbarVer" class="navBar">
-        <a href="javascript:void(0);" class="navName navItem">Gustav<br>Lundgren</a>
-        <a href="javascript:void(0);" class="hamburgerButton" id="hamburgerButton"
-           onclick="hamburgerFunction()">&#9776</a>
+        <div id="navbarVerHead">
+            <a href="javascript:void(0);" class="navName navItem">Gustav<br>Lundgren</a>
+            <a href="javascript:void(0);" class="hamburgerButton" id="hamburgerButton"
+               onclick="hamburgerFunction()">&#9776</a>
+        </div>
         <ul id="hamburgerMenu" style="list-style-type: square">
             <li><a href="javascript:void(0);" class="navItem">Quick Link 1</a></li>
             <li><a href="javascript:void(0);" class="navItem">Quick Link 2</a></li>
