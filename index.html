@@ -6,7 +6,7 @@
     <title>Test Page</title>
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Raleway&display=swap" rel="stylesheet">
 
     <style>
         * {
@@ -15,7 +15,7 @@
         }
 
         body {
-            font-family: "Roboto", sans-serif;
+            font-family: 'Raleway', serif;
             font-size: x-large;
             margin: 0;
         }
@@ -28,6 +28,7 @@
         NAVBAR GENERIC
         ==== */
         .navBar {
+            font-family: 'Playfair Display', serif;
             color: white;
             background-color: black;
         }
@@ -37,7 +38,7 @@
         }
 
         .navName {
-            font-family: "Raleway", sans-serif;
+            font-family: 'Playfair Display', serif;
             text-transform: uppercase;
             letter-spacing: 5px;
         }
@@ -59,6 +60,9 @@
         #navbarVer {
             display: none;
             padding: 30px;
+            position: fixed;
+            top: 0;
+            width: 100%;
         }
 
         .hamburgerButton {
@@ -68,10 +72,16 @@
             position: absolute;
             right: 30px;
             top: 25px;
+            padding: 0 8px;
+        }
+
+        .hamburgerButton:hover {
+            background-color: dimgray;
         }
 
         #hamburgerMenu {
             display: none;
+            background-color: dimgray;
         }
 
         #hamburgerMenu li {
@@ -81,8 +91,19 @@
         /* ====
         BODY TEXT
         ==== */
-        #intro {
+        #content {
             padding-bottom: 5rem;
+        }
+
+        #content-body-text {
+            margin: 10% 20%;
+            text-indent: 2em;
+        }
+
+        #lead-in {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.25rem;
+            text-indent: 0;
         }
 
         /* ====
@@ -124,6 +145,10 @@
                 display: block;
             }
 
+            #content {
+                padding-top: 5rem; /* Accommodate sticky navbar when scrolled to top */
+            }
+
             #contactInfo ul {
                 margin-left: 10%;
             }
@@ -140,15 +165,18 @@
 </nav>
 <nav id="navbarVer" class="navBar">
     <a class="navName navItem">Gustav<br>Lundgren</a>
-    <a href="javascript:void(0);" class="hamburgerButton" onclick="hamburgerFunction()">&#9776</a>
+    <a href="javascript:void(0);" class="hamburgerButton" id="hamburgerButton" onclick="hamburgerFunction()">&#9776</a>
     <ul id="hamburgerMenu" style="list-style-type: square">
             <li><a class="navItem">Quick Link 1</a></li>
             <li><a class="navItem">Quick Link 2</a></li>
             <li><a class="navItem">Quick Link 3</a></li>
     </ul>
 </nav>
-    <div id="intro">
-        <p>This is a test paragraph.</p>
+    <div id="content">
+        <div id="content-body-text">
+            <p id="lead-in">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas condimentum velit vitae est dictum, porta tincidunt sapien commodo.</p>
+            <p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris sed porttitor purus. Curabitur suscipit rhoncus est, vel maximus nunc tempor in. Donec mauris eros, tincidunt id urna vel, ullamcorper sollicitudin augue. Vivamus eget mi vitae mi fermentum iaculis. Morbi et metus sit amet mi varius placerat et id nunc. Curabitur facilisis euismod euismod. Vivamus ut convallis leo. Fusce ac erat nec lacus lacinia lobortis id vitae lectus. Nam felis purus, congue tincidunt vestibulum ac, molestie eu sem. Aenean scelerisque porta. </p>
+        </div>
     </div>
 <footer id="contactInfo">
     <ul style="list-style-type: none">
@@ -160,11 +188,16 @@
 </body>
 <script>
     function hamburgerFunction() {
-        let x = document.getElementById("hamburgerMenu");
-        if (x.style.display === "block") {
-            x.style.display = "none";
+        let m = document.getElementById("hamburgerMenu");
+        let b = document.getElementById("hamburgerButton")
+        if (m.style.display === "block") {
+            m.style.display = "none";
+            b.style.backgroundColor = "black"
+            b.style.color = "white"
         } else {
-            x.style.display = "block";
+            m.style.display = "block";
+            b.style.backgroundColor = "white"
+            b.style.color = "black"
         }
     }
 </script>
