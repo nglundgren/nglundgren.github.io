@@ -24,6 +24,7 @@
             position: relative;
             min-height: 100vh;
         }
+
         /* ====
         NAVBAR GENERIC
         ==== */
@@ -35,6 +36,7 @@
 
         .navItem {
             color: white;
+            text-decoration: none;
         }
 
         .navName {
@@ -75,6 +77,12 @@
             padding: 0 8px;
         }
 
+        .hamburgerActive {
+            /* Style added via script while menu is open. */
+            background-color: white;
+            color: black;
+        }
+
         .hamburgerButton:hover {
             background-color: dimgray;
         }
@@ -109,7 +117,7 @@
         /* ====
         CONTACT
         ==== */
-        #contactInfo {
+        #contact-info {
             background-color: black;
             color: white;
             position: absolute;
@@ -118,8 +126,12 @@
             height: 5rem;
         }
 
-        #contactInfo ul {
+        #contact-info ul {
             margin-left: 55%;
+        }
+
+        #contact-info a {
+            color: white;
         }
 
         /* ====
@@ -149,7 +161,7 @@
                 padding-top: 5rem; /* Accommodate sticky navbar when scrolled to top */
             }
 
-            #contactInfo ul {
+            #contact-info ul {
                 margin-left: 10%;
             }
         }
@@ -157,34 +169,42 @@
 </head>
 <body>
 <div id="page-container">
-<nav id="navbarHor" class="navBar">
-    <a class="navName navItem">Gustav&nbspLundgren</a>&nbsp|
-    <a class="navItem"> Quick Link 1</a>&nbsp|&nbsp
-    <a class="navItem"> Quick Link 2</a>&nbsp|&nbsp
-    <a class="navItem"> Quick Link 3</a>
-</nav>
-<nav id="navbarVer" class="navBar">
-    <a class="navName navItem">Gustav<br>Lundgren</a>
-    <a href="javascript:void(0);" class="hamburgerButton" id="hamburgerButton" onclick="hamburgerFunction()">&#9776</a>
-    <ul id="hamburgerMenu" style="list-style-type: square">
-            <li><a class="navItem">Quick Link 1</a></li>
-            <li><a class="navItem">Quick Link 2</a></li>
-            <li><a class="navItem">Quick Link 3</a></li>
-    </ul>
-</nav>
+    <nav id="navbarHor" class="navBar">
+        <a href="javascript:void(0);" class="navName navItem">Gustav&nbspLundgren</a>&nbsp|
+        <a href="javascript:void(0);" class="navItem"> Quick Link 1</a>&nbsp|&nbsp
+        <a href="javascript:void(0);" class="navItem"> Quick Link 2</a>&nbsp|&nbsp
+        <a href="javascript:void(0);" class="navItem"> Quick Link 3</a>
+    </nav>
+    <nav id="navbarVer" class="navBar">
+        <a href="javascript:void(0);" class="navName navItem">Gustav<br>Lundgren</a>
+        <a href="javascript:void(0);" class="hamburgerButton" id="hamburgerButton"
+           onclick="hamburgerFunction()">&#9776</a>
+        <ul id="hamburgerMenu" style="list-style-type: square">
+            <li><a href="javascript:void(0);" class="navItem">Quick Link 1</a></li>
+            <li><a href="javascript:void(0);" class="navItem">Quick Link 2</a></li>
+            <li><a href="javascript:void(0);" class="navItem">Quick Link 3</a></li>
+        </ul>
+    </nav>
     <div id="content">
         <div id="content-body-text">
-            <p id="lead-in">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas condimentum velit vitae est dictum, porta tincidunt sapien commodo.</p>
-            <p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris sed porttitor purus. Curabitur suscipit rhoncus est, vel maximus nunc tempor in. Donec mauris eros, tincidunt id urna vel, ullamcorper sollicitudin augue. Vivamus eget mi vitae mi fermentum iaculis. Morbi et metus sit amet mi varius placerat et id nunc. Curabitur facilisis euismod euismod. Vivamus ut convallis leo. Fusce ac erat nec lacus lacinia lobortis id vitae lectus. Nam felis purus, congue tincidunt vestibulum ac, molestie eu sem. Aenean scelerisque porta. </p>
+            <p id="lead-in">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas condimentum velit vitae
+                est dictum, porta tincidunt sapien commodo.</p>
+            <p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris sed porttitor purus. Curabitur
+                suscipit rhoncus est, vel maximus nunc tempor in. Donec mauris eros, tincidunt id urna vel, ullamcorper
+                sollicitudin augue. Vivamus eget mi vitae mi fermentum iaculis. Morbi et metus sit amet mi varius
+                placerat et id nunc. Curabitur facilisis euismod euismod. Vivamus ut convallis leo. Fusce ac erat nec
+                lacus lacinia lobortis id vitae lectus. Nam felis purus, congue tincidunt vestibulum ac, molestie eu
+                sem. Aenean scelerisque porta. </p>
         </div>
     </div>
-<footer id="contactInfo">
-    <ul style="list-style-type: none">
-        <li><a>email@email.etc</a></li>
-        <li><a>linkedin.com/in/etc</a></li>
-    </ul>
-</footer>
+    <footer id="contact-info">
+        <ul style="list-style-type: none">
+            <li><a href="javascript:void(0);">email@email.etc</a></li>
+            <li><a href="javascript:void(0);">linkedin.com/in/etc</a></li>
+        </ul>
+    </footer>
 </div>
+<div class="hamburgerActive"></div> <!-- Dumb hack to suppress a dumb IDE warning. -->
 </body>
 <script>
     function hamburgerFunction() {
@@ -192,12 +212,10 @@
         let b = document.getElementById("hamburgerButton")
         if (m.style.display === "block") {
             m.style.display = "none";
-            b.style.backgroundColor = "black"
-            b.style.color = "white"
+            b.classList.remove("hamburgerActive")
         } else {
             m.style.display = "block";
-            b.style.backgroundColor = "white"
-            b.style.color = "black"
+            b.classList.add("hamburgerActive")
         }
     }
 </script>
