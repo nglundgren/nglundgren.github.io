@@ -6,7 +6,11 @@
     <title>Test Page</title>
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Raleway&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;900&family=Raleway&display=swap" rel="stylesheet">
+    <!-- black italic playfair
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;1,900&family=Raleway&display=swap" rel="stylesheet">
+    -->
 
     <style>
         * {
@@ -34,13 +38,12 @@
         ==== */
         .navBar {
             font-family: 'Playfair Display', serif;
-            color: white;
-            background-color: black;
+            border-bottom: 5px solid black;
         }
 
         .navItem {
-            color: white;
             text-decoration: none;
+            color: black;
         }
 
         .navName {
@@ -75,7 +78,7 @@
         }
 
         .hamburgerButton {
-            color: white;
+            color: black;
             font-size: xxx-large;
             text-decoration: none;
             position: absolute;
@@ -111,19 +114,31 @@
         ==== */
         #content {
             padding-bottom: 5rem;
-            text-align: justify;
         }
 
         #content-body-text {
-            margin: 10% 20%;
-            text-indent: 2em;
+            margin: 5% 25%;
+            text-indent: 2rem;
+            font-size: 1rem;
+        }
+
+        #content-body-text a {
+            color: black;
+        }
+
+        #content-body-text p {
+            margin-left: 50px; /* Off-kilter look; something to consider. */
         }
 
         #lead-in {
             font-family: 'Playfair Display', serif;
-            font-size: 1.25rem;
+            font-size: 3rem;
             text-indent: 0;
-        }
+            font-weight: 900;
+            margin-bottom: 0;
+
+            margin-left: -50px; /* Off-kilter look; something to consider. */
+            }
 
         /* ====
         CONTACT
@@ -148,7 +163,7 @@
         /* ====
         RESPONSIVE ADJUSTMENT
         ==== */
-        @media only screen and (max-width: 1070px) and (min-width: 750px) {
+        @media only screen and (max-width: 1090px) and (min-width: 770px) {
             /* For mobile phones: */
             #navbarHor a.navItem {
                 padding: 0 10px;
@@ -157,9 +172,14 @@
             .navItem {
                 font-size: large;
             }
+
+            #content-body-text h1 {
+                font-size: 2rem;
+                margin-left: 0;
+            }
         }
 
-        @media only screen and (max-width: 750px) {
+        @media only screen and (max-width: 770px) {
             #navbarHor {
                 display: none;
             }
@@ -172,8 +192,17 @@
                 padding-top: 5rem; /* Accommodate sticky navbar when scrolled to top */
             }
 
-            #content-body-text p {
+            #content-body-text {
+                margin: 10% 10%;
+            }
+
+            #content-body-text p, #content-body-text a {
                 font-size: medium;
+            }
+
+            #content-body-text h1 {
+                font-size: xx-large;
+                margin-left: 0;
             }
 
             #contact-info ul {
@@ -185,14 +214,16 @@
 <body>
 <div id="page-container">
     <nav id="navbarHor" class="navBar">
-        <a href="javascript:void(0);" class="navName navItem">Gustav&nbspLundgren</a>&nbsp|
-        <a href="javascript:void(0);" class="navItem"> Quick Link 1</a>&nbsp|&nbsp
-        <a href="javascript:void(0);" class="navItem"> Quick Link 2</a>&nbsp|&nbsp
-        <a href="javascript:void(0);" class="navItem"> Quick Link 3</a>
+        <span>
+            <a href="index.html" class="navName navItem">Gustav&nbspLundgren</a>&nbsp|
+            <a href="javascript:void(0);" class="navItem"> Quick Link 1</a>&nbsp|&nbsp
+            <a href="javascript:void(0);" class="navItem"> Quick Link 2</a>&nbsp|&nbsp
+            <a href="javascript:void(0);" class="navItem"> Quick Link 3</a>
+        </span>
     </nav>
     <nav id="navbarVer" class="navBar">
         <div id="navbarVerHead">
-            <a href="javascript:void(0);" class="navName navItem">Gustav<br>Lundgren</a>
+            <a href="index.html" class="navName navItem">Gustav<br>Lundgren</a>
             <a href="javascript:void(0);" class="hamburgerButton" id="hamburgerButton"
                onclick="hamburgerFunction()">&#9776</a>
         </div>
@@ -204,14 +235,9 @@
     </nav>
     <div id="content">
         <div id="content-body-text">
-            <p id="lead-in">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas condimentum velit vitae
-                est dictum, porta tincidunt sapien commodo.</p>
-            <p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris sed porttitor purus. Curabitur
-                suscipit rhoncus est, vel maximus nunc tempor in. Donec mauris eros, tincidunt id urna vel, ullamcorper
-                sollicitudin augue. Vivamus eget mi vitae mi fermentum iaculis. Morbi et metus sit amet mi varius
-                placerat et id nunc. Curabitur facilisis euismod euismod. Vivamus ut convallis leo. Fusce ac erat nec
-                lacus lacinia lobortis id vitae lectus. Nam felis purus, congue tincidunt vestibulum ac, molestie eu
-                sem. Aenean scelerisque porta. </p>
+            <h1 id="lead-in">Of all the work-in-progress personal sites in all the world you walk into mine.</h1>
+            <hr>
+            <p> Hello, here's where I introduce myself. A summary of my <a href="javascript:void(0)">core competences</a> will probably follow. It may contain <a href="javascript:void(0)">links</a> to the <a href="javascript:void(0)">other sections</a> of the site, although I expect most people would use the navigation bar. I think the length of this paragraph will depend a lot on the length of the header.</p>
         </div>
     </div>
     <footer id="contact-info">
