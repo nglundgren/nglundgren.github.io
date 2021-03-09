@@ -18,10 +18,6 @@
             font-size: x-large;
         }
 
-        :root {
-            --carbon-fiber: #2e2e2e;
-        }
-
         body {
             font-family: 'Raleway', serif;
             font-size: x-large;
@@ -37,8 +33,7 @@
         NAVBAR GENERIC
         ==== */
         .navBar {
-            font-family: 'Playfair Display', serif;
-            border-bottom: 5px solid black;
+            border-bottom: 2px solid black;
         }
 
         .navItem {
@@ -89,18 +84,18 @@
 
         .hamburgerActive {
             /* Style added via script while menu is open. */
-            background-color: dimgray;
-            /* color: black; */
+            background-color: lightgray;
         }
 
         .hamburgerButton:hover {
-            background-color: white;
-            color: black;
+            background-color: black;
+            color: white;
         }
 
         #hamburgerMenu {
             display: none;
-            background-color: var(--carbon-fiber);
+            background-color: white;
+            border-top: 2px solid black;
             margin: 0;
             padding: 10px 80px 30px;
         }
@@ -113,7 +108,7 @@
         BODY TEXT
         ==== */
         #content {
-            padding-bottom: 5rem;
+            padding-bottom: 4rem;
         }
 
         #content-body-text {
@@ -149,11 +144,22 @@
             position: absolute;
             bottom: 0;
             width: 100%;
-            height: 5rem;
+            height: 4rem;
         }
 
         #contact-info ul {
-            margin-left: 55%;
+            position: absolute;
+            right: 5em;
+            bottom: 0.75em;
+        }
+
+        #contact-info li {
+            display: inline-block;
+        }
+
+        #contact-info li + li::before {
+            white-space: pre;
+            content: "    |     ";
         }
 
         #contact-info a {
@@ -235,12 +241,13 @@
     </nav>
     <div id="content">
         <div id="content-body-text">
-            <h1 id="lead-in">Of all the work-in-progress personal sites in all the world you walk into mine.</h1>
+            <h1 id="lead-in">Brief, arresting intro.</h1>
             <hr>
             <p> Hello, here's where I introduce myself. A summary of my <a href="javascript:void(0)">core competences</a> will probably follow. It may contain <a href="javascript:void(0)">links</a> to the <a href="javascript:void(0)">other sections</a> of the site, although I expect most people would use the navigation bar. I think the length of this paragraph will depend a lot on the length of the header.</p>
         </div>
     </div>
     <footer id="contact-info">
+        <p style="position: absolute; left: 5em; bottom: 0.75em;">© 2021 Gustav Lundgren</p> <!-- This ought to be styled in CSS instead -->
         <ul style="list-style-type: none">
             <li><a href="javascript:void(0);">email@email.etc</a></li>
             <li><a href="javascript:void(0);">linkedin.com/in/etc</a></li>
