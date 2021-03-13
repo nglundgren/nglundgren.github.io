@@ -14,10 +14,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;900&family=Raleway&display=swap" rel="stylesheet">
 
     <style>
+        /* ====General==== */
+        html {
+            position: relative;
+            min-height: 100%;
+        }
+
         body {
             font-family: Raleway, serif;
             font-size: x-large;
-            margin-bottom: 100px;
+            margin-bottom: 225px;
+        }
+
+        .pipeSep::after{
+            white-space: pre;
+            content: "    |     ";
         }
 
         /* ====Navbar==== */
@@ -77,12 +88,17 @@
             color: dodgerblue;
         }
 
+        @media only screen and (max-width: 992px) {
+            .pipeSep::after {
+                content: "";
+            }
+        }
+
     </style>
 </head>
 <body>
 <nav class="navbar navbar-expand-sm bg-white navbarCustom">
     <a class="navbar-brand navName" href="#">Logo</a>
-
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapseNavbar">
         <span>&#9776</span>
     </button>
@@ -100,20 +116,27 @@
         </ul>
     </div>
 </nav>
+<!--
 <div class="position-relative p-3 p-md-5 m-md-3 text-center">
     <div class="col-md-5 p-lg-5 mx-auto my-5">
         <h1 class="display-2 bigHead">Brief, arresting intro.</h1>
         <p class="lead font-weight-normal leadCustom">Hello, here's where I introduce myself. A summary of my <a href="#">core competences</a> will probably follow. It may contain <a href="#">links</a> to the <a href="#">other sections</a> of the site, although I expect most people would use the navigation bar. I think the length of this paragraph will depend a lot on the length of the header.</p>
     </div>
-    <div class="product-device shadow-sm d-none d-md-block"></div>
-    <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
 </div>
+-->
+<main role="main" class="container">
+    <h1 class="display-2 bigHead">Brief, arresting intro.</h1>
+    <p class="lead font-weight-normal leadCustom">Hello, here's where I introduce myself. A summary of my <a href="#">core competences</a> will probably follow. It may contain <a href="#">links</a> to the <a href="#">other sections</a> of the site, although I expect most people would use the navigation bar. I think the length of this paragraph will depend a lot on the length of the header.</p>
+</main>
 <footer class="footer">
     <div class="container-fluid">
         <div class="row" style="padding: 1.5em 2.5em">
-            <div class="col-md-8">Footer content A</div>
-            <div class="col-md-2"><a href="#">email@email.etc</a></div>
-            <div class="col-md-2"><a href="#">linkedin.com/in/etc</a></div>
+            <div class="col-md-4 col-xl-8">Footer content A</div>
+            <div class="col-md-8 col-xl-4">
+                <a href="#">email@email.etc</a>
+                <span class="pipeSep"></span>
+                <a href="#">linkedin.com/in/etc</a>
+            </div>
         </div>
     </div>
 </footer>
