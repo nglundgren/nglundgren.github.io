@@ -42,7 +42,7 @@
             border-bottom-style: solid;
             border-bottom-width: 2px;
             padding: 0;
-            height: 78px; /* This seems to line up with the line height of items*/
+            min-height: 78px; /* This seems to line up with the line height of items*/
         }
 
         .navName {
@@ -106,6 +106,12 @@
 
         /* ====Responsive Adjustment=== */
 
+        @media only screen and (max-width: 992px) {
+            .nav-link {
+                line-height: inherit;
+            }
+        }
+
         @media only screen and (max-width: 768px) {
             .bigHead {
                 font-size: xxx-large;
@@ -125,7 +131,7 @@
         <span>&#9776</span>
     </button>
     <div class="collapse navbar-collapse" id="collapseNavbar">
-        <ul class="navbar-nav">
+        <ul class="navbar-nav pl-3 pl-lg-1">
             <li class="nav-item">
                 <a class="nav-link" href="#">Quick Link 1</a>
             </li>
