@@ -33,26 +33,39 @@
         }
         */
 
+        .pipeRight {
+            border-right: 2px solid white;
+        }
+
         /* ====Navbar==== */
         .navbarCustom {
             border-bottom-style: solid;
             border-bottom-width: 2px;
+            padding: 0;
+            height: 78px; /* This seems to line up with the line height of items*/
         }
 
         .navName {
             font-family: 'Playfair Display', serif;
-            font-size: x-large;
             font-weight: 500;
+            font-size: 1.1em;
             text-transform: uppercase;
             letter-spacing: 5px;
-        }
-
-        .navbarCustom a {
             color: black;
         }
 
-        .navbarCustom a:hover {
+        .navName:hover {
             color: dodgerblue;
+        }
+
+        .nav-link {
+            color: black;
+            line-height: 60px;
+        }
+
+        .nav-link:hover {
+            color: dodgerblue;
+            background-color: black;
         }
 
         /* ====Content==== */
@@ -74,6 +87,7 @@
         /* ====Footer==== */
         .footer {
             background-color: black;
+            /* background-color: darkslateblue; */
             color: white;
             position: absolute;
             bottom: 0;
@@ -90,20 +104,23 @@
             color: dodgerblue;
         }
 
-        /*
-        @media only screen and (max-width: 992px) {
-            .pipeSep::after {
-                content: "";
+        /* ====Responsive Adjustment=== */
+
+        @media only screen and (max-width: 768px) {
+            .bigHead {
+                font-size: xxx-large;
+            }
+
+            .pipeRight {
+                border-right: none;
             }
         }
-
-         */
 
     </style>
 </head>
 <body>
-<nav class="navbar navbar-expand-md bg-white navbarCustom">
-    <a class="navbar-brand navName" href="#">Logo</a>
+<nav class="navbar navbar-expand-lg bg-white pl-5 navbarCustom">
+    <a class="navbar-brand navName" href="#">Gustav Lundgren</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapseNavbar">
         <span>&#9776</span>
     </button>
@@ -131,18 +148,19 @@
 -->
 <main role="main" class="container pt-3 pt-md-5 text-center">
     <div class="col-md-8 pt-lg-5 mx-auto my-5">
-        <h1 class="display-2 bigHead">Brief, arresting intro.</h1>
+        <h1 class="display-3 bigHead">Brief, arresting intro.</h1>
         <p class="lead font-weight-normal leadCustom">Hello, here's where I introduce myself. A summary of my <a href="#">core competences</a> will probably follow. It may contain <a href="#">links</a> to the <a href="#">other sections</a> of the site, although I expect most people would use the navigation bar. I think the length of this paragraph will depend a lot on the length of the header.</p>
     </div>
 </main>
 
 <footer class="footer">
     <div class="container-fluid">
-        <div class="row" style="padding: 1.5em 2.5em">
-            <div class="col-md-6 col-xl-10">Footer content A</div>
-            <div class="col-md-6 col-xl-2">
-                <a href="#">email@email.etc</a> <br>
-                <!-- <span class="pipeSep"></span> -->
+        <div class="row p-4">
+            <div class="col-sm-12 col-md-4 col-xl-8 pl-xl-5">Footer content A</div>
+            <div class="col-sm-12 col-md-auto px-xl-4 pipeRight">
+                <a href="#">email@email.etc</a>
+            </div>
+            <div class="col-sm-12 col-md-auto px-xl-4">
                 <a href="#">linkedin.com/in/etc</a>
             </div>
         </div>
