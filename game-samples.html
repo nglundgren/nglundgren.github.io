@@ -13,6 +13,23 @@
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;900&family=Raleway&display=swap" rel="stylesheet">
+
+    <style>
+        .card-img-left {
+            width: 100%;
+            padding: 0;
+        }
+
+        .flex-auto {
+            -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+        }
+
+        h3 {
+            font-family: 'Playfair Display', serif;
+        }
+
+    </style>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg bg-white pl-5 navbarCustom">
@@ -23,7 +40,7 @@
     <div class="collapse navbar-collapse" id="collapseNavbar">
         <ul class="navbar-nav pl-3 pl-lg-1">
             <li class="nav-item">
-                <a class="nav-link" href="game-samples.html">Game Dev Work Samples</a>
+                <a class="nav-link" href="game-samples.html">Game Dev Samples</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Quick Link 2</a>
@@ -36,7 +53,32 @@
 </nav>
 
 <main role="main" class="container pt-3 pt-md-5">
-    <p>Page content goes here.</p>
+    <article class="card flex-md-row mb-4 shadow-sm h-md-250">
+        <img class="card-img-left flex-auto d-none d-lg-block col-3" src="assets/testscreenshot.jpg" alt="Placeholder screenshot">
+        <div class="card-body d-flex flex-column align-items-start">
+            <h3 class="mb-0 pb-2"> GatorPop: A Minesweeper clone </h3>
+            <p class="card-text mb-auto">Written in C# using Unity, I made GatorPop as programming practice as well as
+                for my own use. Aside from basic programming ability I believe it primarily demonstrates skill at
+                UX-design. The interface is subtle and wordless, and quite readable while exhibiting a clear personality. </p>
+            <ul>
+                <li><a href="#">Download 1</a></li>
+                <li><a href="#">Download 2</a></li>
+            </ul>
+        </div>
+    </article>
+    <article class="card flex-md-row mb-4 shadow-sm h-md-250">
+        <img class="card-img-left flex-auto d-none d-lg-block col-3" src="assets/testscreenshot.jpg" alt="Placeholder screenshot">
+        <div class="card-body d-flex flex-column align-items-start">
+            <h3 class="mb-0 pb-2"> GatorPop: A Minesweeper clone </h3>
+            <p class="card-text mb-auto">Written in C# using Unity, I made GatorPop as programming practice as well as
+                for my own use. Aside from basic programming ability I believe it primarily demonstrates skill at
+                UX-design. The interface is subtle and wordless, and quite readable while exhibiting a clear personality. </p>
+            <ul>
+                <li><a href="#">Download 1</a></li>
+                <li><a href="#">Download 2</a></li>
+            </ul>
+        </div>
+    </article>
 </main>
 
 <footer class="footer">

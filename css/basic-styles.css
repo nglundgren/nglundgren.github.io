@@ -33,7 +33,7 @@ a:hover {
     border-bottom-style: solid;
     border-bottom-width: 2px;
     padding: 0;
-    min-height: 60px; /* This seems to line up with the line height of items*/
+    min-height: 60px;
 }
 
 .navName {
@@ -47,9 +47,6 @@ a:hover {
 
 .nav-link {
     color: black;
-}
-
-.nav-item {
     line-height: 60px;
 }
 
