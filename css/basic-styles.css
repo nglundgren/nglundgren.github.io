@@ -7,7 +7,7 @@ html {
 body {
     font-family: Raleway, serif;
     font-size: large;
-    margin-bottom: 225px;
+    margin-bottom: 0px;
 }
 
 a {
@@ -30,8 +30,6 @@ a:hover {
 
 /* ====Navbar==== */
 .navbarCustom {
-    border-bottom-style: solid;
-    border-bottom-width: 2px;
     padding: 0;
     min-height: 60px;
 }
