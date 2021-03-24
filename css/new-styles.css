@@ -7,7 +7,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: Raleway, sans-serif;
-  font-size: x-large;
+  font-size: 1.25rem;
 }
 
 #pageContainer {
@@ -22,64 +22,65 @@ body {
   }
 }
 
-nav {
-  background-color: aqua;
-}
-
-main {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-@media only screen and (min-width: 768px) {
-  main {
-    margin-top: 100px;
-  }
-}
-
 h1 {
   font-family: "Playfair Display", serif;
   font-weight: 900;
 }
 
-#landingPage section {
-  width: 90%;
-  background-color: aquamarine;
-  padding: 1rem;
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+nav {
+  display: flex;
+  padding: 0 50px;
+}
+nav a {
+  padding: 20px 10px;
+}
+
+.home {
+  display: block;
+  font-family: "Playfair Display", serif;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+
+.navItems {
+  display: flex;
+  vertical-align: bottom;
+}
+
+.mainContainer {
+  display: flex;
+  justify-content: center;
 }
 @media only screen and (min-width: 768px) {
-  #landingPage section {
-    width: 360px;
+  .mainContainer {
+    margin-top: 100px;
+  }
+}
+
+main {
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+}
+@media only screen and (min-width: 768px) {
+  main {
+    width: 720px;
   }
 }
 @media only screen and (min-width: 992px) {
-  #landingPage section {
-    width: 480px;
+  main {
+    width: 960px;
   }
 }
 @media only screen and (min-width: 1200px) {
-  #landingPage section {
-    width: 570px;
-  }
-}
-#landingPage img {
-  width: 90%;
-  align-self: center;
-  padding: 0.5rem;
-}
-@media only screen and (min-width: 768px) {
-  #landingPage img {
-    width: 360px;
-  }
-}
-@media only screen and (min-width: 992px) {
-  #landingPage img {
-    width: 480px;
-  }
-}
-@media only screen and (min-width: 1200px) {
-  #landingPage img {
-    width: 570px;
+  main {
+    width: 1140px;
   }
 }
 
@@ -90,10 +91,59 @@ footer {
   color: white;
   width: 100%;
   height: 10rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+footer .copyright, footer .email, footer .linkedin {
+  width: 100%;
+  padding: 0 20px;
 }
 @media only screen and (min-width: 768px) {
   footer {
     height: 4rem;
+  }
+  footer .copyright {
+    width: 50%;
+  }
+  footer .email {
+    width: 25%;
+    text-align: right;
+  }
+  footer .linkedin {
+    width: 25%;
+  }
+}
+
+#landingPage section {
+  width: 100%;
+  padding: 1rem;
+}
+@media only screen and (min-width: 768px) {
+  #landingPage section {
+    width: 50%;
+  }
+}
+#landingPage section h1 {
+  line-height: 1.1em;
+  font-size: 5rem;
+  margin: 0;
+  padding: 0;
+}
+#landingPage section p {
+  text-indent: 2em;
+}
+#landingPage section a {
+  text-decoration: underline;
+}
+#landingPage img {
+  width: 100%;
+  align-self: center;
+  padding: 0.5rem;
+}
+@media only screen and (min-width: 768px) {
+  #landingPage img {
+    width: 50%;
   }
 }
 

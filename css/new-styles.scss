@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;900&family=Raleway&display=swap");
 
+//VARIABLES & MIXINS///////////////////
 $footerHeight: 4rem;
 $footerHeightWrapped: 10rem;
 $largeWidth: 1200px;
@@ -23,8 +24,11 @@ $smallWidth: 768px;
 @mixin nameFont {
   font-family: "Playfair Display", serif;
   font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 5px;
 }
 
+//UNIVERSAL STYLES/////////////////////
 * {
   box-sizing: border-box;
 }
@@ -32,7 +36,7 @@ $smallWidth: 768px;
 body {
   @include reset;
   @include mainFont;
-  font-size: x-large;
+  font-size: 1.25rem;
 }
 
 #pageContainer {
@@ -45,48 +49,62 @@ body {
   }
 }
 
-nav {
-  background-color: aqua;
+h1 {
+  @include headerFont;
 }
 
-main {
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+//NAVBAR///////////////////////////////
+nav {
+  //background-color: aqua;
+  display: flex;
+  padding: 0 50px;
+  a {
+    padding: 20px 10px;
+  }
+}
+
+.home {
+  display: block;
+  @include nameFont;
+}
+
+.navItems {
+  display: flex;
+  vertical-align: bottom;
+}
+
+//PAGE CONTENT/////////////////////////
+.mainContainer {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
+  //background-color: bisque;
   @media only screen and (min-width: $smallWidth) {
     margin-top: 100px;
   }
 }
 
-h1 {
-  @include headerFont;
+main {
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  @media only screen and (min-width: $smallWidth) {
+    width: ($smallWidth - 48);
+  }
+  @media only screen and (min-width: $mediumWidth) {
+    width: ($mediumWidth - 32);
+  }
+  @media only screen and (min-width: $largeWidth) {
+    width: ($largeWidth - 60);
+  }
+  //background-color: purple;
 }
 
-#landingPage {
-  @mixin widthRespond {
-    width: 90%;
-    @media only screen and (min-width: $smallWidth) {
-      width: ($smallWidth - 48) / 2;
-    }
-    @media only screen and (min-width: $mediumWidth) {
-      width: ($mediumWidth - 32) / 2;
-    }
-    @media only screen and (min-width: $largeWidth) {
-      width: ($largeWidth - 60) / 2;
-    }
-  }
-  section {
-    @include widthRespond;
-    background-color: aquamarine;
-    padding: 1rem;
-  }
-  img {
-    @include widthRespond;
-    align-self: center;
-    padding: 0.5rem;
-  }
-}
-
+//FOOTER///////////////////////////////
 footer {
   position: absolute;
   bottom: 0;
@@ -94,7 +112,59 @@ footer {
   color: white;
   width: 100%;
   height: $footerHeightWrapped;
+
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  .copyright, .email, .linkedin {
+    width: 100%;
+    padding: 0 20px;
+  }
+
   @media only screen and (min-width: $smallWidth) {
     height: $footerHeight;
+    .copyright {
+      width: 50%;
+    }
+    .email {
+      width: 25%;
+      text-align: right;
+    }
+    .linkedin {
+      width: 25%;
+    }
+  }
+}
+
+//LANDING PAGE/////////////////////////
+#landingPage {
+  @mixin widthRespond {
+    @media only screen and (min-width: $smallWidth) {
+      width: 50%;
+    }
+  }
+  section {
+    width: 100%;
+    @include widthRespond;
+    //background-color: aquamarine;
+    padding: 1rem;
+    h1 {
+      line-height: 1.1em;
+      font-size: 5rem;
+      @include reset;
+    }
+    p {
+      text-indent: 2em;
+    }
+    a {
+      text-decoration: underline;
+    }
+  }
+  img {
+    width: 100%;
+    @include widthRespond;
+    align-self: center;
+    padding: 0.5rem;
   }
 }
