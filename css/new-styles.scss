@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;900&family=Raleway&display=swap");
+
 $footerHeight: 4rem;
 $footerHeightWrapped: 10rem;
 $largeWidth: 1200px;
@@ -9,12 +11,27 @@ $smallWidth: 768px;
   padding: 0;
 }
 
+@mixin mainFont {
+  font-family: Raleway, sans-serif;
+}
+
+@mixin headerFont {
+  font-family: "Playfair Display", serif;
+  font-weight: 900;
+}
+
+@mixin nameFont {
+  font-family: "Playfair Display", serif;
+  font-weight: 500;
+}
+
 * {
   box-sizing: border-box;
 }
 
 body {
   @include reset;
+  @include mainFont;
   font-size: x-large;
 }
 
@@ -22,9 +39,9 @@ body {
   position: absolute;
   min-height: 100%;
   width: 100%;
-  padding-bottom: $footerHeight;
-  @media only screen and (max-width: $smallWidth) {
-    padding-bottom: $footerHeightWrapped;
+  padding-bottom: $footerHeightWrapped;
+  @media only screen and (min-width: $smallWidth) {
+    padding-bottom: $footerHeight;
   }
 }
 
@@ -36,23 +53,26 @@ main {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  margin-top: 100px;
-  @media only screen and (max-width: $smallWidth) {
-    margin-top: 0;
+  @media only screen and (min-width: $smallWidth) {
+    margin-top: 100px;
   }
+}
+
+h1 {
+  @include headerFont;
 }
 
 #landingPage {
   @mixin widthRespond {
-    width: ($largeWidth - 60) / 2;
-    @media only screen and (max-width: $largeWidth) {
-      width: ($mediumWidth - 32) / 2;
-    }
-    @media only screen and (max-width: $mediumWidth) {
+    width: 90%;
+    @media only screen and (min-width: $smallWidth) {
       width: ($smallWidth - 48) / 2;
     }
-    @media only screen and (max-width: $smallWidth) {
-      width: 90%;
+    @media only screen and (min-width: $mediumWidth) {
+      width: ($mediumWidth - 32) / 2;
+    }
+    @media only screen and (min-width: $largeWidth) {
+      width: ($largeWidth - 60) / 2;
     }
   }
   section {
@@ -73,8 +93,8 @@ footer {
   background-color: black;
   color: white;
   width: 100%;
-  height: $footerHeight;
-  @media only screen and (max-width: $smallWidth) {
-    height: $footerHeightWrapped;
+  height: $footerHeightWrapped;
+  @media only screen and (min-width: $smallWidth) {
+    height: $footerHeight;
   }
 }
