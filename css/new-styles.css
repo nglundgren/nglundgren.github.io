@@ -7,28 +7,30 @@ body {
   margin: 0;
   padding: 0;
   font-family: Raleway, sans-serif;
-  font-size: 1.25rem;
+  font-size: 1.2rem;
 }
 
 #pageContainer {
   position: absolute;
   min-height: 100%;
   width: 100%;
-  padding-bottom: 10rem;
+  padding-bottom: 11rem;
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 992px) {
   #pageContainer {
-    padding-bottom: 4rem;
+    padding-bottom: 5rem;
   }
 }
 
-h1 {
+h1, h2 {
+  margin: 0;
+  padding: 0;
   font-family: "Playfair Display", serif;
   font-weight: 900;
+  color: #1480AE;
 }
 
 a {
-  text-decoration: none;
   color: inherit;
 }
 
@@ -38,6 +40,7 @@ nav {
 }
 nav a {
   padding: 20px 10px;
+  text-decoration: none;
 }
 
 .home {
@@ -56,20 +59,24 @@ nav a {
 .mainContainer {
   display: flex;
   justify-content: center;
-}
-@media only screen and (min-width: 768px) {
-  .mainContainer {
-    margin-top: 100px;
-  }
+  /*  @media only screen and (min-width: $smallWidth) {
+      margin-top: 100px;
+    }*/
 }
 
 main {
   width: 90%;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
 }
 @media only screen and (min-width: 768px) {
   main {
+    flex-direction: row;
+  }
+}
+@media only screen and (min-width: 768px) {
+  main {
+    margin-top: 100px;
     width: 720px;
   }
 }
@@ -91,60 +98,93 @@ footer {
   color: white;
   width: 100%;
   height: 10rem;
+  padding: 0 7.5vw;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  flex-wrap: wrap;
+  justify-content: center;
 }
 footer .copyright, footer .email, footer .linkedin {
   width: 100%;
-  padding: 0 20px;
+  padding: 0.25em 2rem;
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 992px) {
   footer {
-    height: 4rem;
+    height: 5rem;
+    flex-direction: row;
   }
   footer .copyright {
-    width: 50%;
+    width: 100%;
   }
   footer .email {
-    width: 25%;
+    width: auto;
     text-align: right;
+    border-right: 2px solid white;
   }
   footer .linkedin {
-    width: 25%;
+    width: auto;
   }
 }
 
-#landingPage section {
+@media only screen and (min-width: 768px) {
+  #landingPage {
+    justify-content: space-between;
+  }
+}
+#landingPage > * {
   width: 100%;
-  padding: 1rem;
 }
 @media only screen and (min-width: 768px) {
-  #landingPage section {
-    width: 50%;
+  #landingPage > * {
+    width: 45%;
   }
+}
+#landingPage section {
+  padding: 1rem;
 }
 #landingPage section h1 {
   line-height: 1.1em;
-  font-size: 5rem;
-  margin: 0;
-  padding: 0;
+  font-size: 2.5rem;
+}
+@media only screen and (min-width: 992px) {
+  #landingPage section h1 {
+    font-size: 4rem;
+  }
 }
 #landingPage section p {
   text-indent: 2em;
 }
-#landingPage section a {
-  text-decoration: underline;
-}
 #landingPage img {
-  width: 100%;
   align-self: center;
   padding: 0.5rem;
 }
+
+#gamePage {
+  flex-direction: column;
+  margin-top: 50px;
+}
+#gamePage article {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #1480AE;
+  margin-bottom: 2rem;
+}
 @media only screen and (min-width: 768px) {
-  #landingPage img {
-    width: 50%;
+  #gamePage article {
+    flex-direction: row;
   }
+}
+#gamePage article img {
+  width: 100%;
+  align-self: center;
+}
+@media only screen and (min-width: 768px) {
+  #gamePage article img {
+    width: 20rem;
+  }
+}
+#gamePage article section {
+  padding: 1em 2em;
 }
 
 /*# sourceMappingURL=new-styles.css.map */

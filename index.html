@@ -2,86 +2,35 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Gustav Lundgren | Home</title>
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/basic-styles.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <title>New landing page using only sass.</title>
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;900&family=Raleway&display=swap" rel="stylesheet">
-
-    <style>
-        /* ====Content==== */
-        .bigHead {
-            font-family: 'Playfair Display', serif;
-            font-weight: 900;
-        }
-
-        .leadCustom {
-            text-indent: 2em;
-        }
-
-        .leadCustom a {
-            text-decoration: underline;
-        }
-
-        /* ====Responsive Adjustment=== */
-
-        @media only screen and (max-width: 768px) {
-            .bigHead {
-                font-size: xxx-large;
-            }
-        }
-
-    </style>
+    <link rel="stylesheet" href="css/new-styles.css">
 </head>
 <body>
-<nav class="navbar navbar-expand-lg bg-white pl-5 navbarCustom">
-    <a class="navbar-brand navName" href="index.html">Gustav Lundgren</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapseNavbar">
-        <span>&#9776</span>
-    </button>
-    <div class="collapse navbar-collapse" id="collapseNavbar">
-        <ul class="navbar-nav pl-3 pl-lg-1">
-            <li class="nav-item">
-                <a class="nav-link" href="game-samples.html">Game Dev Samples</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Quick Link 2</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Quick Link 3</a>
-            </li>
-        </ul>
+<div id="pageContainer">
+<nav>
+    <a href="index.html" class="home">Gustav Lundgren</a>
+    <div class="navItems">
+    <a href="game-samples.html">Game Dev Samples </a>
+    <a href="#">Quick Link 2</a>
+    <a href="#">Quick Link 3</a>
     </div>
 </nav>
-<main role="main" class="container pt-3 pt-md-5">
-    <div class="row p-0 m-0">
-        <div class="col-md-6 pt-lg-5 mx-auto my-5">
-            <h1 class="display-3 bigHead pb-5">Eyecatching intro, a few words long.</h1>
-            <p class="lead font-weight-normal leadCustom">Hello, here's where I introduce myself. A summary of my <a href="#">core competences</a> will probably follow. It may contain <a href="#">links</a> to the <a href="#">other sections</a> of the site, although I expect most people would use the navigation bar. I think the length of this paragraph will depend a lot on the length of the header.</p>
-        </div>
-        <div class="col-md-6 pt-3 pt-md-5">
-            <img src="#" style="width: 100%; height: 300px">
-        </div>
-    </div>
-</main>
-<footer class="footer">
-    <div class="container-fluid">
-        <div class="row p-4">
-            <div class="col-sm-12 col-md-4 col-xl-8 pl-xl-5">Footer content A</div>
-            <div class="col-sm-12 col-md-auto px-xl-4 pipeRight-white">
-                <a href="#">email@email.etc</a>
-            </div>
-            <div class="col-sm-12 col-md-auto px-xl-4">
-                <a href="#">linkedin.com/in/etc</a>
-            </div>
-        </div>
-    </div>
+<div class="mainContainer">
+    <main id="landingPage">
+        <section>
+            <h1>Eye-catching intro, a few words long.</h1>
+            <p> Hello, here's where I introduce myself. A summary of my <a href="#">core competences</a> will probably follow. It may contain <a href="#">links</a> to the <a href="#">other sections</a> of the site, although I expect most people would use the navigation bar. I think the length of this paragraph will depend a lot on the length of the header.</p>
+        </section>
+        <img src="assets/circle.png" alt="Circular image">
+    </main>
+</div>
+<footer>
+    <span class="copyright"> Footer content A </span>
+    <a href="#" class="email">email@email.etc</a>
+    <a href="#" class="linkedin">linkedin.com/in/etc</a>
 </footer>
+</div>
 </body>
 </html>

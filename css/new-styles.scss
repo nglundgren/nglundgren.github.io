@@ -1,11 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;900&family=Raleway&display=swap");
 
 //VARIABLES & MIXINS///////////////////
-$footerHeight: 4rem;
+$footerHeight: 5rem;
 $footerHeightWrapped: 10rem;
 $largeWidth: 1200px;
 $mediumWidth: 992px;
 $smallWidth: 768px;
+$accentColor: #1480AE;
 
 @mixin reset {
   margin: 0;
@@ -17,8 +18,10 @@ $smallWidth: 768px;
 }
 
 @mixin headerFont {
+  @include reset;
   font-family: "Playfair Display", serif;
   font-weight: 900;
+  color: $accentColor;
 }
 
 @mixin nameFont {
@@ -26,6 +29,14 @@ $smallWidth: 768px;
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 5px;
+}
+
+@mixin flexCollapse($collapseWidth) {
+  display: flex;
+  flex-direction: column;
+  @media only screen and (min-width: $collapseWidth) {
+    flex-direction: row;
+  }
 }
 
 //UNIVERSAL STYLES/////////////////////
@@ -36,25 +47,24 @@ $smallWidth: 768px;
 body {
   @include reset;
   @include mainFont;
-  font-size: 1.25rem;
+  font-size: 1.2rem;
 }
 
 #pageContainer {
   position: absolute;
   min-height: 100%;
   width: 100%;
-  padding-bottom: $footerHeightWrapped;
-  @media only screen and (min-width: $smallWidth) {
+  padding-bottom: $footerHeightWrapped + 1rem;
+  @media only screen and (min-width: $mediumWidth) {
     padding-bottom: $footerHeight;
   }
 }
 
-h1 {
+h1, h2 {
   @include headerFont;
 }
 
 a {
-  text-decoration: none;
   color: inherit;
 }
 
@@ -63,8 +73,10 @@ nav {
   //background-color: aqua;
   display: flex;
   padding: 0 50px;
+
   a {
     padding: 20px 10px;
+    text-decoration: none;
   }
 }
 
@@ -83,16 +95,16 @@ nav {
   display: flex;
   justify-content: center;
   //background-color: bisque;
-  @media only screen and (min-width: $smallWidth) {
-    margin-top: 100px;
-  }
+  /*  @media only screen and (min-width: $smallWidth) {
+      margin-top: 100px;
+    }*/
 }
 
 main {
   width: 90%;
-  display: flex;
-  flex-wrap: wrap;
+  @include flexCollapse($smallWidth);
   @media only screen and (min-width: $smallWidth) {
+    margin-top: 100px;
     width: ($smallWidth - 48);
   }
   @media only screen and (min-width: $mediumWidth) {
@@ -112,59 +124,91 @@ footer {
   color: white;
   width: 100%;
   height: $footerHeightWrapped;
+  padding: 0 7.5vw;
 
   display: flex;
+  flex-direction: column;
   align-items: center;
-  flex-wrap: wrap;
+  justify-content: center;
 
   .copyright, .email, .linkedin {
     width: 100%;
-    padding: 0 20px;
+    padding: 0.25em 2rem;
   }
 
-  @media only screen and (min-width: $smallWidth) {
+  @media only screen and (min-width: $mediumWidth) {
     height: $footerHeight;
+    flex-direction: row;
     .copyright {
-      width: 50%;
+      width: 100%;
     }
     .email {
-      width: 25%;
+      width: auto;
       text-align: right;
+      border-right: 2px solid white;
     }
     .linkedin {
-      width: 25%;
+      width: auto;
     }
   }
 }
 
 //LANDING PAGE/////////////////////////
 #landingPage {
-  @mixin widthRespond {
+  @media only screen and (min-width: $smallWidth) {
+    justify-content: space-between;
+  }
+
+  > * {
+    width: 100%;
     @media only screen and (min-width: $smallWidth) {
-      width: 50%;
+      width: 45%;
     }
   }
+
   section {
-    width: 100%;
-    @include widthRespond;
     //background-color: aquamarine;
     padding: 1rem;
+
     h1 {
       line-height: 1.1em;
-      font-size: 5rem;
-      @include reset;
+      font-size: 2.5rem;
+      @media only screen and (min-width: $mediumWidth) {
+        font-size: 4rem;
+      }
     }
+
     p {
       text-indent: 2em;
     }
-    a {
-      text-decoration: underline;
-    }
   }
+
   img {
-    width: 100%;
-    @include widthRespond;
     align-self: center;
     padding: 0.5rem;
+  }
+}
+
+//GAME PAGE////////////////////////////
+#gamePage {
+  flex-direction: column;
+  margin-top: 50px; //temp override
+
+  article {
+    @include flexCollapse($smallWidth);
+    border: 2px solid $accentColor;
+    margin-bottom: 2rem;
+
+    img {
+      width: 100%;
+      @media only screen and (min-width: $smallWidth) {
+        width: 20rem;
+      }
+      align-self: center;
+    }
+
+    section {
+      padding: 1em 2em;
+    }
   }
 }
