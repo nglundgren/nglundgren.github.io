@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;900&family=Raleway&display=swap");
+//@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;900&family=Raleway&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap");
 
 //VARIABLES & MIXINS///////////////////
 $footerHeight: 5rem;
@@ -13,22 +14,29 @@ $accentColor: #1480AE;
   padding: 0;
 }
 
-@mixin mainFont {
-  font-family: Raleway, sans-serif;
+@mixin accentFont {
+  font-family: Inter, sans-serif;
+  font-weight: 300;
+}
+
+@mixin bodyFont {
+  font-family: "Libre Baskerville", sans-serif;
+  font-weight: 400;
+  text-align: justify;
+  line-height: 1.4em;
 }
 
 @mixin headerFont {
   @include reset;
-  font-family: "Playfair Display", serif;
-  font-weight: 900;
-  color: $accentColor;
+  font-family: "Libre Baskerville", serif;
+  font-weight: 700;
 }
 
 @mixin nameFont {
-  font-family: "Playfair Display", serif;
-  font-weight: 500;
+  font-family: "Libre Baskerville", serif;
+  font-weight: 400;
   text-transform: uppercase;
-  letter-spacing: 5px;
+  font-style: italic;
 }
 
 @mixin flexCollapse($collapseWidth) {
@@ -46,8 +54,8 @@ $accentColor: #1480AE;
 
 body {
   @include reset;
-  @include mainFont;
-  font-size: 1.2rem;
+  @include bodyFont;
+  font-size: 1.0rem;
 }
 
 #pageContainer {
@@ -66,6 +74,20 @@ h1, h2 {
 
 a {
   color: inherit;
+}
+
+.imgContainer {
+  margin: auto;
+  padding: 0.5rem;
+  img {
+    width: 100%;
+  }
+}
+
+.caption {
+  @include reset();
+  font-style: italic;
+  text-align: right;
 }
 
 //NAVBAR///////////////////////////////
@@ -102,17 +124,22 @@ nav {
 
 main {
   width: 90%;
+  a {
+    font-style: italic;
+    text-transform: uppercase;
+  }
   @include flexCollapse($smallWidth);
   @media only screen and (min-width: $smallWidth) {
-    margin-top: 100px;
     width: ($smallWidth - 48);
+    margin-top: 4rem;
   }
   @media only screen and (min-width: $mediumWidth) {
     width: ($mediumWidth - 32);
   }
   @media only screen and (min-width: $largeWidth) {
-    width: ($largeWidth - 60);
+    width: 1000px;
   }
+
   //background-color: purple;
 }
 
@@ -131,6 +158,7 @@ footer {
   align-items: center;
   justify-content: center;
 
+  @include accentFont();
   .copyright, .email, .linkedin {
     width: 100%;
     padding: 0.25em 2rem;
@@ -162,20 +190,18 @@ footer {
   > * {
     width: 100%;
     @media only screen and (min-width: $smallWidth) {
-      width: 45%;
+      width: 47.5%;
     }
   }
 
   section {
     //background-color: aquamarine;
-    padding: 1rem;
 
     h1 {
       line-height: 1.1em;
-      font-size: 2.5rem;
-      @media only screen and (min-width: $mediumWidth) {
-        font-size: 4rem;
-      }
+      font-size: 3rem;
+      text-align: right;
+      margin: 1rem 0rem;
     }
 
     p {
@@ -183,9 +209,8 @@ footer {
     }
   }
 
-  img {
-    align-self: center;
-    padding: 0.5rem;
+  .imgContainer {
+    width: 400px;
   }
 }
 
