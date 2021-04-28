@@ -13,40 +13,6 @@ $accentColor: #1480AE;
   padding: 0;
 }
 
-@mixin accentFont {
-  font-family: Inter, sans-serif;
-  font-weight: 700;
-}
-
-@mixin bodyFont {
-  font-family: "Libre Baskerville", sans-serif;
-  font-weight: 400;
-  text-align: justify;
-  line-height: 1.4em;
-}
-
-@mixin jumboFont {
-  @include reset;
-  font-family: "Libre Baskerville", serif;
-  font-weight: 700;
-}
-
-@mixin headerFont {
-  font-family: "Libre Baskerville", serif;
-  font-weight: 400;
-  font-style: italic;
-  font-size: 2rem;
-  line-height: 1.2em;
-  margin: 1rem 0 0 0;
-}
-
-@mixin nameFont {
-  font-family: "Libre Baskerville", serif;
-  font-weight: 400;
-  text-transform: uppercase;
-  font-style: italic;
-}
-
 @mixin flexCollapse($collapseWidth) {
   display: flex;
   flex-direction: column;
@@ -55,6 +21,7 @@ $accentColor: #1480AE;
   }
 }
 
+@import "fonts";
 @import "universal";
 
 @import "navbar";
