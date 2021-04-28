@@ -31,7 +31,8 @@ h2 {
   font-weight: 400;
   font-style: italic;
   font-size: 2rem;
-  line-height: 1.2em; }
+  line-height: 1.2em;
+  margin-top: 1rem; }
 
 h3 {
   font-family: Inter, sans-serif;
@@ -187,8 +188,8 @@ footer {
 
 #writingPage aside {
   display: none;
-  width: 35rem;
-  padding: 0 3rem;
+  width: 60rem;
+  padding-right: 3rem;
   text-align: right; }
   @media only screen and (min-width: 768px) {
     #writingPage aside {
