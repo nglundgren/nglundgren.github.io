@@ -37,6 +37,7 @@ $accentColor: #1480AE;
   font-weight: 400;
   font-style: italic;
   font-size: 2rem;
+  line-height: 1.2em;
 }
 
 @mixin nameFont {
@@ -300,7 +301,7 @@ footer {
     }
   }
   article {
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
   }
 }
 

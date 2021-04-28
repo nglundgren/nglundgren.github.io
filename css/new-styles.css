@@ -30,7 +30,8 @@ h2 {
   font-family: "Libre Baskerville", serif;
   font-weight: 400;
   font-style: italic;
-  font-size: 2rem; }
+  font-size: 2rem;
+  line-height: 1.2em; }
 
 h3 {
   font-family: Inter, sans-serif;
@@ -207,7 +208,7 @@ footer {
       text-indent: 0; }
 
 #writingPage article {
-  margin-bottom: 4rem; }
+  margin-bottom: 2rem; }
 
 .reference {
   text-indent: 0; }
