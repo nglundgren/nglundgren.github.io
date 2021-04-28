@@ -16,7 +16,7 @@ $accentColor: #1480AE;
 
 @mixin accentFont {
   font-family: Inter, sans-serif;
-  font-weight: 300;
+  font-weight: 700;
 }
 
 @mixin bodyFont {
@@ -26,10 +26,17 @@ $accentColor: #1480AE;
   line-height: 1.4em;
 }
 
-@mixin introFont {
+@mixin jumboFont {
   @include reset;
   font-family: "Libre Baskerville", serif;
   font-weight: 700;
+}
+
+@mixin headerFont {
+  font-family: "Libre Baskerville", serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 2rem;
 }
 
 @mixin nameFont {
@@ -68,12 +75,24 @@ body {
   }
 }
 
-h1, h2 {
-  @include introFont;
+h1 {
+  @include jumboFont;
+}
+
+h2 {
+  @include headerFont();
+}
+
+h3 {
+  @include accentFont();
 }
 
 a {
   color: inherit;
+}
+
+a:hover {
+  color: $accentColor;
 }
 
 .imgContainer {
@@ -114,6 +133,7 @@ nav {
 .home {
   @include nameFont;
   z-index: 10;
+  //padding-right: 4rem;
 }
 
 .navItems {
@@ -122,6 +142,14 @@ nav {
   display: none;
   @media  only screen and (min-width: $smallWidth) {
     display: flex;
+  }
+}
+
+.hamburger {
+  position: absolute;
+  right: 2rem;
+  @media  only screen and (min-width: $smallWidth) {
+    display: none;
   }
 }
 
@@ -231,13 +259,12 @@ footer {
 
   article {
     @include flexCollapse($smallWidth);
-    border: 2px solid $accentColor;
-    margin-bottom: 2rem;
+    padding: 2rem 0rem;
 
     img {
       width: 100%;
       @media only screen and (min-width: $smallWidth) {
-        width: 20rem;
+        width: 40rem;
       }
       align-self: center;
     }
@@ -245,5 +272,34 @@ footer {
     section {
       padding: 1em 2em;
     }
+  }
+}
+
+//Writing Page/////////////////////////
+#writingPage {
+  aside {
+    display: none;
+    width: 35rem;
+    padding: 0 3rem;
+    @media only screen and (min-width: $smallWidth) {
+      display: inline;
+    }
+    text-align: right;
+    a {
+      @include accentFont();
+      text-decoration: none;
+      text-transform: none;
+      font-style: normal;
+    }
+    .TOC {
+      position: sticky;
+      top: 3rem;
+      p {
+        text-indent: 0;
+      }
+    }
+  }
+  article {
+    margin-bottom: 4rem;
   }
 }
