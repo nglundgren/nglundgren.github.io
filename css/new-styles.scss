@@ -26,7 +26,7 @@ $accentColor: #1480AE;
   line-height: 1.4em;
 }
 
-@mixin headerFont {
+@mixin introFont {
   @include reset;
   font-family: "Libre Baskerville", serif;
   font-weight: 700;
@@ -69,7 +69,7 @@ body {
 }
 
 h1, h2 {
-  @include headerFont;
+  @include introFont;
 }
 
 a {
@@ -91,25 +91,38 @@ a {
 }
 
 //NAVBAR///////////////////////////////
+
 nav {
   //background-color: aqua;
-  display: flex;
-  padding: 0 50px;
-
+  text-align: left;
   a {
     padding: 20px 10px;
     text-decoration: none;
   }
+  display: flex;
+  padding: 0 50px;
+  position: fixed;
+  background-color: white;
+  width: 100%;
+  border-bottom: 2px solid black;
+  @media  only screen and (min-width: $smallWidth) {
+    position: static;
+    border-bottom: none;
+  }
 }
 
 .home {
-  display: block;
   @include nameFont;
+  z-index: 10;
 }
 
 .navItems {
-  display: flex;
+  background-color: white;
   vertical-align: bottom;
+  display: none;
+  @media  only screen and (min-width: $smallWidth) {
+    display: flex;
+  }
 }
 
 //PAGE CONTENT/////////////////////////
@@ -117,13 +130,11 @@ nav {
   display: flex;
   justify-content: center;
   //background-color: bisque;
-  /*  @media only screen and (min-width: $smallWidth) {
-      margin-top: 100px;
-    }*/
 }
 
 main {
   width: 90%;
+  margin-top: 4rem;
   a {
     font-style: italic;
     text-transform: uppercase;
@@ -131,13 +142,16 @@ main {
   @include flexCollapse($smallWidth);
   @media only screen and (min-width: $smallWidth) {
     width: ($smallWidth - 48);
-    margin-top: 4rem;
   }
   @media only screen and (min-width: $mediumWidth) {
     width: ($mediumWidth - 32);
   }
   @media only screen and (min-width: $largeWidth) {
     width: 1000px;
+  }
+
+  p {
+    text-indent: 2em;
   }
 
   //background-color: purple;
@@ -202,10 +216,6 @@ footer {
       font-size: 3rem;
       text-align: right;
       margin: 1rem 0rem;
-    }
-
-    p {
-      text-indent: 2em;
     }
   }
 

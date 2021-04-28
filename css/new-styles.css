@@ -42,32 +42,43 @@ a {
   text-align: right; }
 
 nav {
+  text-align: left;
   display: flex;
-  padding: 0 50px; }
+  padding: 0 50px;
+  position: fixed;
+  background-color: white;
+  width: 100%;
+  border-bottom: 2px solid black; }
   nav a {
     padding: 20px 10px;
     text-decoration: none; }
+  @media only screen and (min-width: 768px) {
+    nav {
+      position: static;
+      border-bottom: none; } }
 
 .home {
-  display: block;
   font-family: "Libre Baskerville", serif;
   font-weight: 400;
   text-transform: uppercase;
-  font-style: italic; }
+  font-style: italic;
+  z-index: 10; }
 
 .navItems {
-  display: flex;
-  vertical-align: bottom; }
+  background-color: white;
+  vertical-align: bottom;
+  display: none; }
+  @media only screen and (min-width: 768px) {
+    .navItems {
+      display: flex; } }
 
 .mainContainer {
   display: flex;
-  justify-content: center;
-  /*  @media only screen and (min-width: $smallWidth) {
-      margin-top: 100px;
-    }*/ }
+  justify-content: center; }
 
 main {
   width: 90%;
+  margin-top: 4rem;
   display: flex;
   flex-direction: column; }
   main a {
@@ -78,14 +89,15 @@ main {
       flex-direction: row; } }
   @media only screen and (min-width: 768px) {
     main {
-      width: 720px;
-      margin-top: 4rem; } }
+      width: 720px; } }
   @media only screen and (min-width: 992px) {
     main {
       width: 960px; } }
   @media only screen and (min-width: 1200px) {
     main {
       width: 1000px; } }
+  main p {
+    text-indent: 2em; }
 
 footer {
   position: absolute;
@@ -132,9 +144,6 @@ footer {
   font-size: 3rem;
   text-align: right;
   margin: 1rem 0rem; }
-
-#landingPage section p {
-  text-indent: 2em; }
 
 #landingPage .imgContainer {
   width: 400px; }
