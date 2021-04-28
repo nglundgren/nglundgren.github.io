@@ -32,7 +32,7 @@ h2 {
   font-style: italic;
   font-size: 2rem;
   line-height: 1.2em;
-  margin-top: 1rem; }
+  margin: 1rem 0 0 0; }
 
 h3 {
   font-family: Inter, sans-serif;
@@ -188,7 +188,7 @@ footer {
 
 #writingPage aside {
   display: none;
-  width: 60rem;
+  width: 100rem;
   padding-right: 3rem;
   text-align: right; }
   @media only screen and (min-width: 768px) {
