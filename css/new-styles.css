@@ -179,11 +179,10 @@ footer {
       #gamePage article {
         flex-direction: row; } }
     #gamePage article img {
-      width: 100%;
-      align-self: center; }
+      width: 100%; }
       @media only screen and (min-width: 768px) {
         #gamePage article img {
-          width: 40rem; } }
+          width: 20rem; } }
     #gamePage article section {
       padding: 1em 2em; }
 
@@ -209,3 +208,6 @@ footer {
 
 #writingPage article {
   margin-bottom: 4rem; }
+
+.reference {
+  text-indent: 0; }

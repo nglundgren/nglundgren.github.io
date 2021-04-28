@@ -264,9 +264,9 @@ footer {
     img {
       width: 100%;
       @media only screen and (min-width: $smallWidth) {
-        width: 40rem;
+        width: 20rem;
       }
-      align-self: center;
+      //align-self: center;
     }
 
     section {
@@ -302,4 +302,8 @@ footer {
   article {
     margin-bottom: 4rem;
   }
+}
+
+.reference {
+  text-indent: 0;
 }
