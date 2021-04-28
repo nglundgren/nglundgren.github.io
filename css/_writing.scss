@@ -1,0 +1,32 @@
+//Writing Page/////////////////////////
+#writingPage {
+    aside {
+      display: none;
+      width: 35rem;
+      padding: 0 3rem;
+      @media only screen and (min-width: $smallWidth) {
+        display: inline;
+      }
+      text-align: right;
+      a {
+        @include accentFont();
+        text-decoration: none;
+        text-transform: none;
+        font-style: normal;
+      }
+      .TOC {
+        position: sticky;
+        top: 3rem;
+        p {
+          text-indent: 0;
+        }
+      }
+    }
+    article {
+      margin-bottom: 2rem;
+    }
+  }
+  
+  .reference {
+    text-indent: 0;
+  }

@@ -1,0 +1,54 @@
+//UNIVERSAL STYLES/////////////////////
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    @include reset;
+    @include bodyFont;
+    font-size: 1.0rem;
+  }
+  
+  #pageContainer {
+    position: absolute;
+    min-height: 100%;
+    width: 100%;
+    padding-bottom: $footerHeightWrapped + 1rem;
+    @media only screen and (min-width: $mediumWidth) {
+      padding-bottom: $footerHeight;
+    }
+  }
+  
+  h1 {
+    @include jumboFont;
+  }
+  
+  h2 {
+    @include headerFont();
+  }
+  
+  h3 {
+    @include accentFont();
+  }
+  
+  a {
+    color: inherit;
+  }
+  
+  a:hover {
+    color: $accentColor;
+  }
+  
+  .imgContainer {
+    margin: auto;
+    padding: 0.5rem;
+    img {
+      width: 100%;
+    }
+  }
+  
+  .caption {
+    @include reset();
+    font-style: italic;
+    text-align: right;
+  }

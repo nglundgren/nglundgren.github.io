@@ -1,0 +1,44 @@
+//NAVBAR///////////////////////////////
+
+nav {
+    //background-color: aqua;
+    text-align: left;
+    a {
+      padding: 20px 10px;
+      text-decoration: none;
+    }
+    display: flex;
+    padding: 0 50px;
+    position: fixed;
+    background-color: white;
+    width: 100%;
+    border-bottom: 2px solid black;
+    @media  only screen and (min-width: $smallWidth) {
+      position: static;
+      border-bottom: none;
+    }
+  }
+  
+  .home {
+    @include nameFont;
+    z-index: 10;
+    //padding-right: 4rem;
+  }
+  
+  .navItems {
+    background-color: white;
+    vertical-align: bottom;
+    display: none;
+    @media  only screen and (min-width: $smallWidth) {
+      display: flex;
+    }
+  }
+  
+  .hamburger {
+    position: absolute;
+    right: 2rem;
+    font-size: 2rem;
+    // @media  only screen and (min-width: $smallWidth) {
+    //   display: none;
+    // }
+  }

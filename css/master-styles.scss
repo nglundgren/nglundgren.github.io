@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap");
+
+//VARIABLES & MIXINS///////////////////
+$footerHeight: 5rem;
+$footerHeightWrapped: 10rem;
+$largeWidth: 1200px;
+$mediumWidth: 992px;
+$smallWidth: 768px;
+$accentColor: #1480AE;
+
+@mixin reset {
+  margin: 0;
+  padding: 0;
+}
+
+@mixin accentFont {
+  font-family: Inter, sans-serif;
+  font-weight: 700;
+}
+
+@mixin bodyFont {
+  font-family: "Libre Baskerville", sans-serif;
+  font-weight: 400;
+  text-align: justify;
+  line-height: 1.4em;
+}
+
+@mixin jumboFont {
+  @include reset;
+  font-family: "Libre Baskerville", serif;
+  font-weight: 700;
+}
+
+@mixin headerFont {
+  font-family: "Libre Baskerville", serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 2rem;
+  line-height: 1.2em;
+}
+
+@mixin nameFont {
+  font-family: "Libre Baskerville", serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-style: italic;
+}
+
+@mixin flexCollapse($collapseWidth) {
+  display: flex;
+  flex-direction: column;
+  @media only screen and (min-width: $collapseWidth) {
+    flex-direction: row;
+  }
+}
+
+@import "universal";
+
+@import "navbar";
+@import "content";
+@import "footer";
+@import "landing";
+@import "games";
+@import "writing";
