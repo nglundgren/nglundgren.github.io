@@ -29,7 +29,7 @@ nav {
     background-color: white;
     vertical-align: bottom;
     display: none;
-    @media  only screen and (min-width: $smallWidth) {
+    @media  only screen and (min-width: $smallWidth) and (orientation: landscape) {
       display: flex;
     }
   }
