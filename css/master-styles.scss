@@ -35,7 +35,7 @@ $accentColor: #1480AE;
 
 //temp phone font hack
 :root {
-  @media only screen and (max-width: $mediumWidth) {
+  @media only screen and (max-width: $smallWidth) {
     font-size: 2em;
   }
 }
