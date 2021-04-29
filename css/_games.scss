@@ -9,7 +9,7 @@
   
       img {
         width: 100%;
-        @media only screen and (min-width: $smallWidth) {
+        @media only screen and (min-width: $smallWidth) and (orientation: landscape) {
           width: 20rem;
         }
         //align-self: center;

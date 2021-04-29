@@ -19,7 +19,7 @@ footer {
       padding: 0.25em 2rem;
     }
   
-    @media only screen and (min-width: $mediumWidth) {
+    @media only screen and (min-width: $mediumWidth) and (orientation: landscape) {
       height: $footerHeight;
       flex-direction: row;
       .copyright {

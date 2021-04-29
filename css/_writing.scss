@@ -4,7 +4,7 @@
       display: none;
       width: 100rem;
       padding-right: 3rem;
-      @media only screen and (min-width: $smallWidth) {
+      @media only screen and (min-width: $smallWidth) and (orientation: landscape) {
         display: inline;
       }
       text-align: right;

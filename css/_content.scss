@@ -8,21 +8,21 @@
   main {
     width: 90%;
     margin: 4rem 0;
+    @include flexCollapse($smallWidth);
+    @media only screen and (min-width: $smallWidth) and (orientation: landscape) {
+      width: ($smallWidth - 48);
+    }
+    @media only screen and (min-width: $mediumWidth) and (orientation: landscape) {
+      width: ($mediumWidth - 32);
+    }
+    @media only screen and (min-width: $largeWidth) and (orientation: landscape) {
+      width: 1000px;
+    }
+    
     a {
       font-style: italic;
       text-transform: uppercase;
     }
-    @include flexCollapse($smallWidth);
-    @media only screen and (min-width: $smallWidth) {
-      width: ($smallWidth - 48);
-    }
-    @media only screen and (min-width: $mediumWidth) {
-      width: ($mediumWidth - 32);
-    }
-    @media only screen and (min-width: $largeWidth) {
-      width: 1000px;
-    }
-  
     p {
       text-indent: 2em;
     }

@@ -15,8 +15,8 @@ $accentColor: #1480AE;
 
 @mixin flexCollapse($collapseWidth) {
   display: flex;
-  flex-direction: column;
-  @media only screen and (min-width: $collapseWidth) {
+  flex-direction: column-reverse;
+  @media only screen and (min-width: $collapseWidth) and (orientation: landscape){
     flex-direction: row;
   }
 }
@@ -27,6 +27,15 @@ $accentColor: #1480AE;
 @import "navbar";
 @import "content";
 @import "footer";
+
+@import "toc";
 @import "landing";
 @import "games";
 @import "writing";
+
+//temp phone font hack
+:root {
+  @media only screen and (max-width: $mediumWidth) {
+    font-size: 2em;
+  }
+}

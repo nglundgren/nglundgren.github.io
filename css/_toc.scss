@@ -1,0 +1,47 @@
+.tocContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    bottom: $footerHeightWrapped;
+    width: 100%;
+    @media only screen and (min-width: $mediumWidth) and (orientation: landscape) {
+        bottom: $footerHeight;
+    }
+}
+
+.dotLine {
+    flex-grow: 100;
+    border-bottom: 2px dotted black;
+    position: relative;
+    height: 0.95em;
+}
+
+#TOC {
+    a {
+        text-decoration: none;
+    }
+    h1 {
+        text-align: center;
+        @include nameFont;
+        font-size: 2rem;
+        line-height: 3rem;
+    }
+    h2 {
+        @include bodyFont;
+        text-align: center;
+        margin: 0;
+    }
+    h3 {
+        @include bodyFont;
+    }
+    h4 {
+        @include headerFont;
+        text-indent: 2rem;
+    }
+    h3, h4 {
+        display: flex;
+        font-size: 1rem;
+    }
+}

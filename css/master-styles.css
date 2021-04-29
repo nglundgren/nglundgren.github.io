@@ -9,14 +9,14 @@ body {
   font-weight: 400;
   text-align: justify;
   line-height: 1.4em;
-  font-size: 1.0rem; }
+  font-size: 1rem; }
 
 #pageContainer {
   position: absolute;
   min-height: 100%;
   width: 100%;
   padding-bottom: 11rem; }
-  @media only screen and (min-width: 992px) {
+  @media only screen and (min-width: 992px) and (orientation: landscape) {
     #pageContainer {
       padding-bottom: 5rem; } }
 
@@ -101,22 +101,22 @@ main {
   width: 90%;
   margin: 4rem 0;
   display: flex;
-  flex-direction: column; }
+  flex-direction: column-reverse; }
+  @media only screen and (min-width: 768px) and (orientation: landscape) {
+    main {
+      flex-direction: row; } }
+  @media only screen and (min-width: 768px) and (orientation: landscape) {
+    main {
+      width: 720px; } }
+  @media only screen and (min-width: 992px) and (orientation: landscape) {
+    main {
+      width: 960px; } }
+  @media only screen and (min-width: 1200px) and (orientation: landscape) {
+    main {
+      width: 1000px; } }
   main a {
     font-style: italic;
     text-transform: uppercase; }
-  @media only screen and (min-width: 768px) {
-    main {
-      flex-direction: row; } }
-  @media only screen and (min-width: 768px) {
-    main {
-      width: 720px; } }
-  @media only screen and (min-width: 992px) {
-    main {
-      width: 960px; } }
-  @media only screen and (min-width: 1200px) {
-    main {
-      width: 1000px; } }
   main p {
     text-indent: 2em; }
 
@@ -137,7 +137,7 @@ footer {
   footer .copyright, footer .email, footer .linkedin {
     width: 100%;
     padding: 0.25em 2rem; }
-  @media only screen and (min-width: 992px) {
+  @media only screen and (min-width: 992px) and (orientation: landscape) {
     footer {
       height: 5rem;
       flex-direction: row; }
@@ -150,13 +150,70 @@ footer {
       footer .linkedin {
         width: auto; } }
 
-@media only screen and (min-width: 768px) {
+.tocContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  bottom: 10rem;
+  width: 100%; }
+  @media only screen and (min-width: 992px) and (orientation: landscape) {
+    .tocContainer {
+      bottom: 5rem; } }
+
+.dotLine {
+  flex-grow: 100;
+  border-bottom: 2px dotted black;
+  position: relative;
+  height: 0.95em; }
+
+#TOC a {
+  text-decoration: none; }
+
+#TOC h1 {
+  text-align: center;
+  font-family: "Libre Baskerville", serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-style: italic;
+  font-size: 2rem;
+  line-height: 3rem; }
+
+#TOC h2 {
+  font-family: "Libre Baskerville", sans-serif;
+  font-weight: 400;
+  text-align: justify;
+  line-height: 1.4em;
+  text-align: center;
+  margin: 0; }
+
+#TOC h3 {
+  font-family: "Libre Baskerville", sans-serif;
+  font-weight: 400;
+  text-align: justify;
+  line-height: 1.4em; }
+
+#TOC h4 {
+  font-family: "Libre Baskerville", serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 2rem;
+  line-height: 1.2em;
+  margin: 1rem 0 0 0;
+  text-indent: 2rem; }
+
+#TOC h3, #TOC h4 {
+  display: flex;
+  font-size: 1rem; }
+
+@media only screen and (min-width: 768px) and (orientation: landscape) {
   #landingPage {
     justify-content: space-between; } }
 
 #landingPage > * {
   width: 100%; }
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 768px) and (orientation: landscape) {
     #landingPage > * {
       width: 47.5%; } }
 
@@ -166,21 +223,24 @@ footer {
   margin: 1rem 0rem; }
 
 #landingPage .imgContainer {
-  width: 400px; }
+  width: 100%; }
+  @media only screen and (min-width: 768px) and (orientation: landscape) {
+    #landingPage .imgContainer {
+      width: 400px; } }
 
 #gamePage {
   flex-direction: column;
   margin-top: 50px; }
   #gamePage article {
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     padding: 2rem 0rem; }
-    @media only screen and (min-width: 768px) {
+    @media only screen and (min-width: 768px) and (orientation: landscape) {
       #gamePage article {
         flex-direction: row; } }
     #gamePage article img {
       width: 100%; }
-      @media only screen and (min-width: 768px) {
+      @media only screen and (min-width: 768px) and (orientation: landscape) {
         #gamePage article img {
           width: 20rem; } }
     #gamePage article section {
@@ -191,7 +251,7 @@ footer {
   width: 100rem;
   padding-right: 3rem;
   text-align: right; }
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 768px) and (orientation: landscape) {
     #writingPage aside {
       display: inline; } }
   #writingPage aside a {
@@ -211,3 +271,7 @@ footer {
 
 .reference {
   text-indent: 0; }
+
+@media only screen and (max-width: 992px) {
+  :root {
+    font-size: 2em; } }
