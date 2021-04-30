@@ -1,0 +1,41 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap");
+a {
+  color: inherit; }
+
+p {
+  font-family: "Libre Baskerville", sans-serif;
+  font-weight: 400;
+  text-align: justify;
+  line-height: 1.4em;
+  text-indent: 2em; }
+  p a {
+    font-style: italic;
+    text-transform: uppercase; }
+
+.caption {
+  font-style: italic;
+  text-indent: 0;
+  text-align: right; }
+
+.jumbo {
+  margin: 0;
+  padding: 0;
+  font-family: "Libre Baskerville", serif;
+  font-weight: 700;
+  text-align: right; }
+
+nav {
+  font-family: "Libre Baskerville", sans-serif;
+  font-weight: 400;
+  text-align: justify;
+  line-height: 1.4em; }
+
+.name {
+  font-family: "Libre Baskerville", serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-style: italic; }
+
+footer {
+  font-family: Inter, sans-serif;
+  font-weight: 700; }

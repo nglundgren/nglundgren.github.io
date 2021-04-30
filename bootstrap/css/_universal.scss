@@ -1,0 +1,35 @@
+a {
+    color: inherit;
+}
+
+p {
+    @include bodyFont();
+    text-indent: 2em;
+    a {
+        font-style: italic;
+        text-transform: uppercase;
+    }
+}
+
+.caption {
+    font-style: italic;
+    text-indent: 0;
+    text-align: right;
+}
+
+.jumbo {
+    @include jumboFont();
+    text-align: right;
+}
+
+nav {
+    @include bodyFont();
+}
+
+.name {
+    @include nameFont();
+}
+
+footer {
+    @include accentFont();
+}
