@@ -13,7 +13,7 @@ nav {
     background-color: white;
     width: 100%;
     border-bottom: 2px solid black;
-    @media  only screen and (min-width: $smallWidth) {
+    @media only screen and (orientation: landscape) {
       position: static;
       border-bottom: none;
     }
