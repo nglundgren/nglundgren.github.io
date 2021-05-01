@@ -106,3 +106,15 @@ footer {
   flex-grow: 100;
   border-bottom: 2px dotted black;
   height: 0.95em; }
+
+.TOC {
+  position: sticky;
+  top: 2rem; }
+  .TOC div {
+    font-family: Inter, sans-serif;
+    font-weight: 700;
+    margin: 1em 0; }
+
+.reference {
+  padding-left: 2em;
+  text-indent: -2em; }

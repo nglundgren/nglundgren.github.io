@@ -91,3 +91,18 @@ footer {
     border-bottom: 2px dotted black;
     height: 0.95em;
 }
+
+//WRITING//////////////////////////////
+.TOC {
+    position: sticky;
+    top: 2rem;
+    div {
+        @include accentFont();
+        margin: 1em 0;
+    }
+}
+
+.reference {
+    padding-left: 2em;
+    text-indent: -2em;
+}
