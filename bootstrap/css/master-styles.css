@@ -118,3 +118,7 @@ footer {
 .reference {
   padding-left: 2em;
   text-indent: -2em; }
+
+#writingPage h3 {
+  padding-top: .5em;
+  padding-bottom: 1em; }
