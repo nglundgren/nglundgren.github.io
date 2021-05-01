@@ -33,3 +33,41 @@ nav {
 footer {
     @include accentFont();
 }
+
+//TOC//////////////////////////////////
+#TOC {
+    h1 {
+        @include nameFont();
+        text-align: center;
+        font-size: 2rem;
+        line-height: 3rem;
+        margin: 0;
+    }
+    h2 {
+        @include bodyFont();
+        text-align: center;
+        font-size: 1.5rem;
+        font-style: italic;
+        margin-top: 0;
+        margin-bottom: 1em;
+    }
+    h3 {
+        @include bodyFont();
+        display: flex;
+        font-size: 1.2rem;
+    }
+    h4 {
+        @include bodyFont();
+        display: flex;
+        font-style: italic;
+        font-size: 1.2rem;
+        text-indent: 2em;
+    }
+
+}
+
+.dotLine {
+    flex-grow: 100;
+    border-bottom: 2px dotted black;
+    height: 0.95em;
+}

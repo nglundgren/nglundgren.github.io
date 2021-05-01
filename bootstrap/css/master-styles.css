@@ -39,3 +39,47 @@ nav {
 footer {
   font-family: Inter, sans-serif;
   font-weight: 700; }
+
+#TOC h1 {
+  font-family: "Libre Baskerville", serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-style: italic;
+  text-align: center;
+  font-size: 2rem;
+  line-height: 3rem;
+  margin: 0; }
+
+#TOC h2 {
+  font-family: "Libre Baskerville", sans-serif;
+  font-weight: 400;
+  text-align: justify;
+  line-height: 1.4em;
+  text-align: center;
+  font-size: 1.5rem;
+  font-style: italic;
+  margin-top: 0;
+  margin-bottom: 1em; }
+
+#TOC h3 {
+  font-family: "Libre Baskerville", sans-serif;
+  font-weight: 400;
+  text-align: justify;
+  line-height: 1.4em;
+  display: flex;
+  font-size: 1.2rem; }
+
+#TOC h4 {
+  font-family: "Libre Baskerville", sans-serif;
+  font-weight: 400;
+  text-align: justify;
+  line-height: 1.4em;
+  display: flex;
+  font-style: italic;
+  font-size: 1.2rem;
+  text-indent: 2em; }
+
+.dotLine {
+  flex-grow: 100;
+  border-bottom: 2px dotted black;
+  height: 0.95em; }
