@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Playfair+Display+SC&display=swap");
 a {
   color: inherit; }
 
@@ -10,14 +10,14 @@ p {
   text-indent: 2em; }
   p a {
     font-style: italic;
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    color: darkslategrey; }
 
 h2 {
   font-family: "Libre Baskerville", serif;
   font-weight: 400;
   font-style: italic;
-  line-height: 1.2em;
-  margin: 1em 0 0 0; }
+  line-height: 1.2em; }
 
 h3 {
   font-family: Inter, sans-serif;
@@ -43,15 +43,15 @@ li {
 .jumbo {
   margin: 0;
   padding: 0;
-  font-family: "Libre Baskerville", serif;
-  font-weight: 700;
-  text-align: right; }
+  font-family: 'Playfair Display SC', serif;
+  text-align: center; }
 
 nav {
-  font-family: "Libre Baskerville", sans-serif;
-  font-weight: 400;
-  text-align: justify;
-  line-height: 1.4em; }
+  font-family: Inter, sans-serif;
+  font-weight: 300;
+  border-bottom: 1px solid lightgray; }
+  nav a.active {
+    border-bottom: .5em solid darkslategrey; }
 
 .name {
   font-family: "Libre Baskerville", serif;
@@ -61,7 +61,7 @@ nav {
 
 footer {
   font-family: Inter, sans-serif;
-  font-weight: 700; }
+  font-weight: 300; }
 
 #TOC h1 {
   font-family: "Libre Baskerville", serif;
@@ -112,7 +112,7 @@ footer {
   top: 2rem; }
   .TOC div {
     font-family: Inter, sans-serif;
-    font-weight: 700;
+    font-weight: 300;
     margin: 1em 0; }
 
 .reference {
@@ -122,3 +122,6 @@ footer {
 #writingPage h3 {
   padding-top: .5em;
   padding-bottom: 1em; }
+
+#writingPage h2 {
+  margin: 1em 0 0 0; }

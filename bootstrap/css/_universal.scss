@@ -8,6 +8,7 @@ p {
     a {
         font-style: italic;
         text-transform: uppercase;
+        color: darkslategrey;
     }
 }
 
@@ -16,7 +17,7 @@ h2 {
 }
 
 h3 {
-    @include accentFont();
+    @include subFont();
     font-size: 1rem;
 }
 
@@ -39,11 +40,15 @@ li {
 
 .jumbo {
     @include jumboFont();
-    text-align: right;
+    text-align: center;
 }
 
 nav {
-    @include bodyFont();
+    @include accentFont();
+    border-bottom: 1px solid lightgray;
+    a.active {
+        border-bottom: .5em solid darkslategrey;
+    }
 }
 
 .name {
@@ -110,4 +115,8 @@ footer {
 #writingPage h3 {
     padding-top: .5em;
     padding-bottom: 1em;
+}
+
+#writingPage h2 {    
+    margin: 1em 0 0 0;
 }
