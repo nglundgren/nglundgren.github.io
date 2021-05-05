@@ -102,7 +102,8 @@ footer {
     position: sticky;
     top: 2rem;
     div {
-        @include accentFont();
+        @include subFont();
+        color: darkslategray;
         margin: 1em 0;
     }
 }
