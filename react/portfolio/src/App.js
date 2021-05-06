@@ -1,16 +1,18 @@
 import {BrowserRouter, Switch, Route} from "react-router-dom"
 
-import Footer from './components/footer'
+import Footer from './components/footer';
 import Navbar from './components/navbar';
 import contents from './components/contents';
 import games from './components/games';
 import home from './components/home';
 import writing from './components/writing';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 function App() {
   return (
     <BrowserRouter>
-      <Navbar />
+      <Navbar/>
       <Switch>
         <Route component={home} path='/' exact/>
         <Route component={contents} path='/contents'/>

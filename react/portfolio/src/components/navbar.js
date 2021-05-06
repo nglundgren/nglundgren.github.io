@@ -1,17 +1,19 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom';
+
+import { Container } from 'reactstrap'
 
 export default function navbar() {
     return (
-        <header>
-            <nav>
-                <NavLink to='/' exact>Gustav Lundgren</NavLink>
-                <div>
-                    <NavLink to='/games'>Game Dev Samples </NavLink>
-                    <NavLink to='/writing'>Writing Samples</NavLink>
+        <header className="d-flex" style={{marginBottom: "auto"}}>
+            <Container className="d-flex">
+                <NavLink to='/' exact className="nav-link">Gustav Lundgren</NavLink>
+                <div className="d-none d-md-flex">
+                    <NavLink to='/games' className="nav-link">Game Dev Samples </NavLink>
+                    <NavLink to='/writing' className="nav-link">Writing Samples</NavLink>
                 </div>
-                <NavLink to='/contents'>&#9776;</NavLink>
-            </nav>
+                <NavLink to='/contents' className="nav-link" style={{marginLeft: "auto"}}>&#9776;</NavLink>
+            </Container>
         </header>
     );
 }
