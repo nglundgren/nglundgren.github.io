@@ -7,8 +7,6 @@ import games from './components/games';
 import home from './components/home';
 import writing from './components/writing';
 
-import 'bootstrap/dist/css/bootstrap.min.css';
-
 function App() {
   return (
     <BrowserRouter>
